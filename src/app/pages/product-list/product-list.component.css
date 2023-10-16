@@ -1,0 +1,13 @@
+.image-container {
+  width: 100%;        /* El ancho que desees para las imágenes */
+  height: 200px;      /* La altura que desees para las imágenes */
+  overflow: hidden;   /* Oculta cualquier parte de la imagen que exceda las dimensiones del contenedor */
+  display: flex;
+  align-items: center; /* Centra la imagen verticalmente */
+  justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+.image-container img {
+  width: 100%;       /* Esto hará que la imagen ocupe el ancho completo del contenedor. */
+  height: auto;      /* Mantén esto en 'auto' para mantener la proporción correcta de la imagen */
+}

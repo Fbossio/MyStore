@@ -14,10 +14,6 @@ div {
   overflow: inherit;
 }
 
-.mat-sidenav-container{
-/* background-color: lightskyblue; */
-min-height: 93vh !important;
-}
 
 a{
   text-decoration: none;
