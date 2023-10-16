@@ -9,9 +9,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, ProductListComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    ProductListComponent,
+    ProductItemComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
