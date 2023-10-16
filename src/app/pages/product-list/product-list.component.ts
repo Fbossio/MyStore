@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
 
@@ -7,7 +7,7 @@ import { ProductsService } from '../../services/products.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   mybreakpoint = 3;
   rowHeight = '1:1.5';
   products: IProduct[] = [];
