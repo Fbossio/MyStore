@@ -10,6 +10,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MaterialModule } from './material/material.module';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     NavBarComponent,
     ProductListComponent,
     ProductItemComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,6 @@
     <button mat-button>
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
-    <button mat-button>DETAILS</button>
+    <button mat-button [routerLink]="['/product', product.id]" (click)="handleProductClick()"> DETAILS</button>
   </mat-card-actions>
 </mat-card>

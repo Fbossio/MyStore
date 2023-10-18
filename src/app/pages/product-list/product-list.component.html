@@ -1,11 +1,3 @@
-<!-- <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="16px">
-  <div fxFlex="30%" *ngFor="let product of products">
-    <div class="image-container">
-      <img [src]="product.image" alt="{{ product.title }}">
-    </div>
-  </div>
-</div> -->
-
 <mat-grid-list [cols]="mybreakpoint" [rowHeight]="rowHeight" (window:resize)="handleSize($event)">
   <mat-grid-tile *ngFor="let product of products">
     <app-product-item [product]="product"></app-product-item>
