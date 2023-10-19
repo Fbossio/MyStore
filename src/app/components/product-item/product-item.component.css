@@ -2,10 +2,22 @@
   max-width: 400px;
 }
 
-.example-card img {
+
+.example-card .card-image {
   width: auto;
   max-height: 400px;
   padding: 10px;
+  cursor: pointer;
+}
+
+.card-content {
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 

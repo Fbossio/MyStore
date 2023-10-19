@@ -11,7 +11,7 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductDetailComponent implements OnInit {
   product: IProduct | null = null;
-  quantityList: number[] = [1, 2, 3, 4, 5, 6, 7];
+  quantityList: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   display = 'product-detail';
   selectedQuantity = 1;
 
