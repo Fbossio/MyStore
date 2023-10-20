@@ -1,0 +1,25 @@
+<form #form="ngForm" (ngSubmit)="submitForm()">
+  <h3>Enter your Billing Information</h3>
+  <mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput placeholder="(minimum 3 characters)" required minlength="3" name="fullName" [(ngModel)]="fullName">
+    <!-- <mat-error></mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="(minimum 6 characters)" required minlength="6" name="address" [(ngModel)]="address">
+    <!-- <mat-error></mat-error> -->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Card Number</mat-label>
+    <input matInput placeholder="(16-digit number)" required maxlength="16" pattern="^[0-9]{16,}$" name="creditCard"
+      [(ngModel)]="creditCard">
+    <!-- <mat-error></mat-error> -->
+  </mat-form-field>
+  <button [disabled]="form.invalid" mat-raised-button color="primary" class="submit-btn">
+    <mat-icon>send</mat-icon>
+    Submit
+  </button>
+</form>

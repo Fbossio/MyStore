@@ -12,6 +12,10 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { MaterialModule } from './material/material.module';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartTableComponent } from './components/cart-table/cart-table.component';
+import { CartFormComponent } from './components/cart-form/cart-form.component';
+import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
     ProductListComponent,
     ProductItemComponent,
     ProductDetailComponent,
+    CartComponent,
+    CartTableComponent,
+    CartFormComponent,
+    EmptyCartComponent,
   ],
   imports: [
     BrowserModule,

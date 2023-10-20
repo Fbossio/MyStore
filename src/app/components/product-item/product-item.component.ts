@@ -34,6 +34,7 @@ export class ProductItemComponent {
       const cartItem = {
         name: this.product.title,
         quantity: this.selectedQuantity,
+        image: this.product.image,
         price: this.product.price,
       };
 
