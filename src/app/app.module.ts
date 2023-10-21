@@ -16,6 +16,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { CartFormComponent } from './components/cart-form/cart-form.component';
 import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
+import { NotificationComponent } from './pages/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EmptyCartComponent } from './pages/empty-cart/empty-cart.component';
     CartTableComponent,
     CartFormComponent,
     EmptyCartComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IBillingInfo } from '../../models/billingInfo';
 import { CartService } from '../../services/cart.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-cart-form',
@@ -12,15 +15,26 @@ export class CartFormComponent implements OnInit {
   creditCard = '';
   totalPrice = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private notificationService: NotificationService,
+    private router: Router
+  ) {}
 
   submitForm() {
-    const formData = {
+    const billingData: IBillingInfo = {
       fullName: this.fullName,
       address: this.address,
       totalPrice: this.totalPrice,
     };
-    console.log(formData);
+
+    this.notificationService.setBillingInfo(billingData);
+    this.router.navigate(['/notification']);
+
+    setTimeout(() => {
+      this.cartService.clearCart();
+    }, 500);
+
     this.fullName = '';
     this.address = '';
     this.creditCard = '';

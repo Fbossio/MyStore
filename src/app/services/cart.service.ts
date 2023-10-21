@@ -51,4 +51,8 @@ export class CartService {
       this.itemsCartSource.next(items);
     }
   }
+
+  clearCart(): void {
+    this.itemsCartSource.next([]);
+  }
 }

@@ -1,0 +1,14 @@
+.notification-container,
+.unauthorizedBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+
+}
+
+mat-card {
+  max-width: 800px;
+
+}

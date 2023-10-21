@@ -1,0 +1,30 @@
+<div class="notification-container" *ngIf="billingInfo; else unauthorizedBlock">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Success!</mat-card-title>
+      <mat-card-subtitle>
+        <p>Thank you {{billingInfo.fullName}}</p>
+        <p>Your {{billingInfo.totalPrice}} order is confirmed</p>
+        <p>It will be delivered at {{billingInfo.address}} in 1 to 3 business day(s)</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button routerLink="/">Back to Product List</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #unauthorizedBlock>
+  <div class="unauthorizedBlock">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Unauthorized</mat-card-title>
+        <mat-card-subtitle>
+          <p>You are not authorized to view this page</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button routerLink="/">Back to Product List</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

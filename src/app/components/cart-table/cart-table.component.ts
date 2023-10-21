@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { ICartItem } from '../../models/cartItem';
 import { CartService } from '../../services/cart.service';
 
@@ -8,7 +10,8 @@ import { CartService } from '../../services/cart.service';
   templateUrl: './cart-table.component.html',
   styleUrls: ['./cart-table.component.css'],
 })
-export class CartTableComponent implements OnInit {
+export class CartTableComponent implements OnInit, OnDestroy {
+  private ngUnsubscribe = new Subject<void>();
   cartItems: ICartItem[] = [];
   displayedColumns: string[] = ['name', 'price', 'quantity'];
 
@@ -21,19 +24,30 @@ export class CartTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.itemsCart$.subscribe(items => {
-      this.cartItems = items;
-    });
+    this.cartService.itemsCart$
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(items => {
+        this.cartItems = items;
+      });
 
-    this.cartService.totalPrice$.subscribe(total => {
-      this.totalPrice = total;
-    });
+    this.cartService.totalPrice$
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(total => {
+        this.totalPrice = total;
+      });
 
-    this.cartService.totalQuantity$.subscribe(totalQuantity => {
-      if (totalQuantity === 0) {
-        this.router.navigate(['/empty-cart']);
-      }
-    });
+    this.cartService.totalQuantity$
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(totalQuantity => {
+        if (totalQuantity === 0) {
+          this.router.navigate(['/empty-cart']);
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 
   onItemQuantityChange(item: ICartItem) {
