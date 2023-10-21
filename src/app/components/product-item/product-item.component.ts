@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IProduct } from '../../models/product';
 import { CartService } from '../../services/cart.service';
 import { ProductsService } from '../../services/products.service';
+import { alert } from '../../utils/alert';
 
 @Component({
   selector: 'app-product-item',
@@ -39,6 +40,7 @@ export class ProductItemComponent {
       };
 
       this.cartService.addItem(cartItem);
+      alert('Success', 'Item added to cart', 'success');
     }
   }
 }

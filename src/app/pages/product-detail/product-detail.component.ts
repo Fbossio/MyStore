@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../models/product';
 import { CartService } from '../../services/cart.service';
 import { ProductsService } from '../../services/products.service';
+import { alert } from '../../utils/alert';
 
 @Component({
   selector: 'app-product-detail',
@@ -56,6 +57,7 @@ export class ProductDetailComponent implements OnInit {
       };
 
       this.cartService.addItem(cartItem);
+      alert('Success', 'Item added to cart', 'success');
     }
   }
 }

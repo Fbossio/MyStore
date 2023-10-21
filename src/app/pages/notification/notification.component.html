@@ -4,7 +4,7 @@
       <mat-card-title>Success!</mat-card-title>
       <mat-card-subtitle>
         <p>Thank you {{billingInfo.fullName}}</p>
-        <p>Your {{billingInfo.totalPrice}} order is confirmed</p>
+        <p>Your {{billingInfo.totalPrice | currency}} order is confirmed</p>
         <p>It will be delivered at {{billingInfo.address}} in 1 to 3 business day(s)</p>
       </mat-card-subtitle>
     </mat-card-header>
